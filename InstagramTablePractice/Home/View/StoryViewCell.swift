@@ -15,9 +15,10 @@ class StoryTableViewCell: UITableViewCell {
     private lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width / 3) - (10 * 5), height: 150)
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width / 2) - (10 * 9), height: 160)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .black
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(StoryCollectionViewCell.self, forCellWithReuseIdentifier: "StoryCollectionViewCell")
@@ -26,7 +27,13 @@ class StoryTableViewCell: UITableViewCell {
     }()
     
     public var stories : [StoryModel] = [
-        StoryModel(profile: "profile")
+        StoryModel(profile: "profile"),
+        StoryModel(profile: "profile"),
+        StoryModel(profile: "profile"),
+        StoryModel(profile: "profile"),
+        StoryModel(profile: "profile"),
+        StoryModel(profile: "profile"),
+        StoryModel(profile: "profile"),
     ]
     
     public let profileImageView : UIImageView = {
@@ -38,7 +45,6 @@ class StoryTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .red
         setupView()
     }
     
@@ -79,7 +85,7 @@ class StoryCollectionViewCell : UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.layer.cornerRadius = 20
-        contentView.backgroundColor = .red
+//        contentView.backgroundColor = .black
         setupView()
     }
     
@@ -91,7 +97,7 @@ class StoryCollectionViewCell : UICollectionViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 25
+        imageView.layer.cornerRadius = 40
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -100,12 +106,10 @@ class StoryCollectionViewCell : UICollectionViewCell {
         contentView.addSubview(profileImageView)
         
         NSLayoutConstraint.activate([
-            profileImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            profileImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor,constant: 40),
-            profileImageView.heightAnchor.constraint(equalToConstant: 50),
-            profileImageView.widthAnchor.constraint(equalToConstant: 50),
-//            profileImageView.centerXAnchor.constraint(equalToSystemSpacingAfter: contentView.centerXAnchor, multiplier: 4),
-//            profileImageView.centerYAnchor.constraint(equalToSystemSpacingBelow: contentView.centerYAnchor, multiplier: 2),
+            profileImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            profileImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor,constant: 35),
+            profileImageView.heightAnchor.constraint(equalToConstant: 80),
+            profileImageView.widthAnchor.constraint(equalToConstant: 80),
         ])
     }
 }
