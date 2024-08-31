@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window.makeKeyAndVisible()
         window.rootViewController = UINavigationController(rootViewController: homeViewController)
+        window.rootViewController = BaseTabBarController()
         
         self.window = window
         self.window?.makeKeyAndVisible()

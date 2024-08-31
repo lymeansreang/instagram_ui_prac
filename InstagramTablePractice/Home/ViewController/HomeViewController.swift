@@ -14,21 +14,21 @@ class HomeViewController: UIViewController {
     }()
     
     public var homes : [HomeModel] = [
-        HomeModel(profile: "profile", name: "Chan Dara", postImage: "Image1", like: "heart", comment: "chat", share: "send",save: "bookmark", descriptions: "Best view in Tokyo"),
-        HomeModel(profile: "profile1", name: "Keo Bopha", postImage: "Image2", like: "heart", comment: "chat", share: "send",save: "bookmark", descriptions: "Night View"),
+        HomeModel(profile: "profile", name: "Chan Dara", postImage: "Image1", like: "heart", comment: "chat", share: "send",save: "bookmark", descriptions: "Best view in Tokyo", viewersComment: "View all comments", hours: "20 hours ago"),
+        HomeModel(profile: "profile1", name: "Keo Bopha", postImage: "Image2", like: "heart", comment: "chat", share: "send",save: "bookmark", descriptions: "Night View", viewersComment: "View all comments", hours: "10 hours ago"),
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
-        let label = UILabel()
-        label.textColor = UIColor.white
-        label.text = "Instagram"
-        label.font = .systemFont(ofSize: 28, weight: .bold)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
+//        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+//        navigationController?.navigationBar.titleTextAttributes = textAttributes
+//        let label = UILabel()
+//        label.textColor = UIColor.white
+//        label.text = "Instagram"
+//        label.font = .systemFont(ofSize: 28, weight: .bold)
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
     }
 
     private func setupView(){
@@ -71,6 +71,8 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         cell.shareButtonImageView.image = UIImage(named: home.share)
         cell.saveButtonImageView.image = UIImage(named: home.save)
         cell.descriptionLabel.text = home.descriptions
+        cell.viewAllCommentLabel.text = home.viewersComment
+        cell.timeLabel.text = home.hours
         return cell
 
     }

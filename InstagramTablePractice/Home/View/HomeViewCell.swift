@@ -86,14 +86,26 @@ class HomeViewCell: UITableViewCell {
         label.textColor = .white
         label.font = .monospacedSystemFont(ofSize: 18, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         return label
         }()
     
+    public var viewAllCommentLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray6
+        label.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 2
+        return label
+    }()
     
-//    public lazy var likeButton = initButton(icon: "heart" , title: "200k")
-//    public lazy var commentButton = initButton(icon: "chat" , title: "168")
-//    public lazy var shareButton = initButton(icon: "send" , title: "999")
+    public var timeLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray6
+        label.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     var contentStackView : UIStackView = {
         let stackView = UIStackView()
@@ -134,6 +146,8 @@ class HomeViewCell: UITableViewCell {
         contentView.addSubview(shareButtonImageView)
         contentView.addSubview(saveButtonImageView)
         contentView.addSubview(descriptionLabel)
+        contentView.addSubview(viewAllCommentLabel)
+        contentView.addSubview(timeLabel)
         
         
         NSLayoutConstraint.activate([
@@ -146,7 +160,7 @@ class HomeViewCell: UITableViewCell {
             userNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 35),
             
             postImageView.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 15),
-            postImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -70),
+            postImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -110),
             
             threeDotButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             threeDotButton.bottomAnchor.constraint(equalTo: postImageView.topAnchor, constant: -20),
@@ -174,6 +188,12 @@ class HomeViewCell: UITableViewCell {
             descriptionLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 40),
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
 //            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
+            viewAllCommentLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 70),
+            viewAllCommentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            
+            timeLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 90),
+            timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
         ])
     }
 }

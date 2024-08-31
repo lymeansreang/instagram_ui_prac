@@ -34,12 +34,15 @@ class StoryTableViewCell: UITableViewCell {
     
     public var stories : [StoryModel] = [
         StoryModel(profile: "profile",name: "Sok"),
+        StoryModel(profile: "profile2",name: "Sao"),
+        StoryModel(profile: "profile3",name: "San"),
+        StoryModel(profile: "profile4",name: "Chan"),
+        StoryModel(profile: "profile5",name: "Kea"),
         StoryModel(profile: "profile",name: "Sok"),
-        StoryModel(profile: "profile",name: "Sok"),
-        StoryModel(profile: "profile",name: "Sok"),
-        StoryModel(profile: "profile",name: "Sok"),
-        StoryModel(profile: "profile",name: "Sok"),
-        StoryModel(profile: "profile",name: "Sok"),
+        StoryModel(profile: "profile2",name: "Sao"),
+        StoryModel(profile: "profile3",name: "San"),
+        StoryModel(profile: "profile4",name: "Chan"),
+        StoryModel(profile: "profile5",name: "Kea"),
     ]
     
     public let profileImageView : UIImageView = {

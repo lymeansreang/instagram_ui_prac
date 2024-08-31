@@ -9,4 +9,6 @@ struct HomeModel {
     let share: String
     let save: String
     let descriptions: String
+    let viewersComment: String
+    let hours: String
 }
