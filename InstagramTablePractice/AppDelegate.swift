@@ -24,6 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func scene (_ scene: UIScene, willConnectTo session: UISceneSession, option connectionOptions: UIScene.ConnectionOptions){
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            let window = UIWindow(windowScene: windowScene)
+            
+            let vc = HomeViewController()
+            let nav = UINavigationController(rootViewController: vc)
+//            nav.setupNavBar()
+            
+            
+            window.rootViewController = nav
+            self.window = window
+            self.window?.makeKeyAndVisible()
+        }
+    
     // MARK: UISceneSession Lifecycle
 
 //    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

@@ -1,14 +1,12 @@
-//
-//  HomeModel.swift
-//  InstagramTablePractice
-//
-//  Created by Rithiya on 23/8/24.
-//
-
 import Foundation
 
 struct HomeModel {
     let profile : String
-//    let photo : String
-//    let description
+    let name : String
+    let postImage : String
+    let like: String
+    let comment: String
+    let share: String
+    let save: String
+    let descriptions: String
 }

@@ -15,6 +15,7 @@
 		6F5854732C786D45004E5A8F /* StoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5854722C786D45004E5A8F /* StoryViewCell.swift */; };
 		6F5854752C787E20004E5A8F /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5854742C787E20004E5A8F /* StoryModel.swift */; };
 		6F5854772C78819F004E5A8F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5854762C78819F004E5A8F /* HomeModel.swift */; };
+		FCBA81EC2C8061CC000CAEE0 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBA81EB2C8061CC000CAEE0 /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6F5854722C786D45004E5A8F /* StoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewCell.swift; sourceTree = "<group>"; };
 		6F5854742C787E20004E5A8F /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		6F5854762C78819F004E5A8F /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		FCBA81EB2C8061CC000CAEE0 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				6F58545B2C78616A004E5A8F /* HomeViewController.swift */,
+				FCBA81EB2C8061CC000CAEE0 /* BaseTabBarController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBA81EC2C8061CC000CAEE0 /* BaseTabBarController.swift in Sources */,
 				6F5854712C786636004E5A8F /* HomeViewCell.swift in Sources */,
 				6F58545C2C78616A004E5A8F /* HomeViewController.swift in Sources */,
 				6F5854772C78819F004E5A8F /* HomeModel.swift in Sources */,

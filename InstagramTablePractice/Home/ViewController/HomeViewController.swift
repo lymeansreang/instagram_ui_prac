@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  InstagramTablePractice
-//
-//  Created by Rithiya on 23/8/24.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -20,14 +13,22 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
-    private var homes : [HomeModel] = [
-        HomeModel(profile: "profile")
+    public var homes : [HomeModel] = [
+        HomeModel(profile: "profile", name: "Chan Dara", postImage: "Image1", like: "heart", comment: "chat", share: "send",save: "bookmark", descriptions: "Best view in Tokyo"),
+        HomeModel(profile: "profile1", name: "Keo Bopha", postImage: "Image2", like: "heart", comment: "chat", share: "send",save: "bookmark", descriptions: "Night View"),
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        let label = UILabel()
+        label.textColor = UIColor.white
+        label.text = "Instagram"
+        label.font = .systemFont(ofSize: 28, weight: .bold)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
     }
 
     private func setupView(){
@@ -49,7 +50,10 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        guard indexPath.row != 0 else {
+                    return 130
+                }
+                return UITableView.automaticDimension
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,7 +62,15 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewCell.reuseIdentifier, for: indexPath) as! HomeViewCell
-//        let home = homes[indexPath.row - 1]
+        let home = homes[indexPath.row - 1]
+        cell.profileImageView.image = UIImage(named: home.profile)
+        cell.userNameLabel.text = home.name
+        cell.postImageView.image = UIImage(named: home.postImage)
+        cell.likeButtonImageView.image = UIImage(named: home.like)
+        cell.commentButtonImageView.image = UIImage(named: home.comment)
+        cell.shareButtonImageView.image = UIImage(named: home.share)
+        cell.saveButtonImageView.image = UIImage(named: home.save)
+        cell.descriptionLabel.text = home.descriptions
         return cell
 
     }

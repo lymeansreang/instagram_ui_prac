@@ -9,4 +9,9 @@ import Foundation
 
 struct StoryModel {
     let profile: String
+    let name: String
+}
+
+struct StoryPostModel {
+    let userProfile: String
 }
